@@ -4,28 +4,28 @@ CHIP DisplayCounter201816995 {
     
     PARTS:
 
-    DFF(in=aFlip, out=A)
-    DFF(in=bFlip, out=B)
-    DFF(in=cFlip, out=C)
-    DFF(in=dFlip, out=D)
+    DFF(in=aFlip, out=A);
+    DFF(in=bFlip, out=B);
+    DFF(in=cFlip, out=C);
+    DFF(in=dFlip, out=D);
    
    
-    Xor(a=inc, b=A, out=aFlip)
-    And(a=inc, b=A, out=car1)
-    Xor(a=car1, b=B, out=bFlip)
-    And(a=car1, b=B, out=car2)
-    Xor(a=car2, b=C, out=cFlip)
-    And(a=car2, b=C, out=car3)
-    Xor(a=car3, b=D, out=dFlip)
+    Xor(a=inc, b=A, out=aFlip);
+    And(a=inc, b=A, out=car1);
+    Xor(a=car1, b=B, out=bFlip);
+    And(a=car1, b=B, out=car2);
+    Xor(a=car2, b=C, out=cFlip);
+    And(a=car2, b=C, out=car3);
+    Xor(a=car3, b=D, out=dFlip);
 
-    Or (a=reset, b=aflip, out=rA);
-    Or (a=reset, b=bflip, out=rB);
-    Or (a=reset, b=cflip, out=rC);
-    Or (a=reset, b=dflip, out=rD);
-    Mux (a=rA, b=0, sel=reset, out=aflip);
-    Mux (a=rB, b=0, sel=reset, out=bflip);
-    Mux (a=rC, b=0, sel=reset, out=cflip);
-    Mux (a=rD, b=0, sel=reset, out=dflip);
+    Or(a=reset, b=aflip, out=rA);
+    Or(a=reset, b=bflip, out=rB);
+    Or(a=reset, b=cflip, out=rC);
+    Or(a=reset, b=dflip, out=rD);
+    Mux(a=rA, b=0, sel=reset, out=aflip);
+    Mux(a=rB, b=0, sel=reset, out=bflip);
+    Mux(a=rC, b=0, sel=reset, out=cflip);
+    Mux(a=rD, b=0, sel=reset, out=dflip);
 
 
     Not (in=A, out = nota);    
