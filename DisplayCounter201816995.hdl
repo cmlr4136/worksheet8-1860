@@ -7,6 +7,6 @@ CHIP DisplayCounter201816995 {
     Mux16(a=reduce, b=increase, sel=inc, out=result);
     Mux16(a=result, b=0, sel=reset, out=TrueChange);
     Register(in=TrueChange, load=1, out[0]=D, out[1]=C, out[2]=B, out[3]=A);
-    Decoder201816995(A=A, B=B, C=C, D=D, a=a, b=b, c=c, d=d, e=e, f=f);
+    Decoder201816995.hdl(A=A, B=B, C=C, D=D, a=a, b=b, c=c, d=d, e=e, f=f);
     inc16(in=result, out=increase);
     }
